@@ -23,16 +23,18 @@ import {
     Editor,
 } from "./pages";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 import "./App.css";
 
 const App = () => {
-    const activeMenu = true;
+    const { activeMenu } = useStateContext();
 
     return (
         <BrowserRouter>
             <div className="flex relative dark:bg-main-dark-bg">
                 <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-                    <TooltipComponent content={"Settings"} position="Top">
+                    <TooltipComponent content="Settings" position="Top">
                         <button
                             className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
                             style={{ background: "blue", borderRadius: "50%" }}
